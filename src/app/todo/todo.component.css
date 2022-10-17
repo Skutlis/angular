@@ -11,5 +11,9 @@ td, th {
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: #db5959;
+}
+mat-icon {
+    font-family: arial, sans-serif;
+    font-size: 15px;
 }
