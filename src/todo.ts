@@ -1,7 +1,7 @@
 export interface todo {
-    id: String;
-    summary: String;
-    description: String;
+    id: string;
+    summary: string;
+    description: string;
 }
 
 

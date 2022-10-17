@@ -32,12 +32,14 @@ export class TodoComponent implements OnInit {
     let resp = this.service.getTodo();
     resp.subscribe(
       (report => this.dataSource.data = report as todo[]))
+
     
   }
 
-  public delete(id: String) {
-    let resp = this.service.deleteTodo(id);
+  public delete(del: todo) {
+    let resp = this.service.deleteTodo(del.id);
     resp.subscribe(() => this.status = '');
+
   }
 
   public putTodo() {
@@ -45,9 +47,13 @@ export class TodoComponent implements OnInit {
       "summary: " + this.summary + ","
       + "description: " + this.description +
     "}";
+  
 
     let resp = this.service.addTodo(this.pTodo)
     resp.subscribe()
+    this.description = '';
+    this.summary = '';
+
 
   }
 
@@ -59,9 +65,6 @@ export class TodoComponent implements OnInit {
     this.description = des.target.value;
   }
 
-  out(t: any){
-    this.hello = this.dataSource.data;
-  }
   
 
 }
