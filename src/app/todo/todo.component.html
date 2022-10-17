@@ -17,9 +17,9 @@
 
     <ng-container matColumnDef = "delete">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Delete</th>
-        <td mat-cell *matCellDef = "let i = id">
-            <button mat-raised-button class = "delete" (click) = "delete(i)">
-                <mat-icon>close</mat-icon>
+        <td mat-cell *matCellDef = "let element">
+            <button mat-raised-button class = "delete" (click) = "delete(element)">
+                <mat-icon>del</mat-icon>
                 </button>
         </td>
     </ng-container>
@@ -35,5 +35,3 @@
 <label for="sum">Summary:</label><br>
 <input type="text" id="sum" name="sum" (keyup) = "updateSummary($event)"><br>
 <button mat-raised-button class = "putTodo" (click) = putTodo()>Add</button>
-<input (keyup)="out($event)">
-<p>{{hello}}</p>
